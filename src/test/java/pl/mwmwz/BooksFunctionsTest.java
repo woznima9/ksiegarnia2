@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 
 public class BooksFunctionsTest {
@@ -91,20 +93,17 @@ public class BooksFunctionsTest {
 
     @Test // 9.	Zwróć informacje o tym czy wszystkie książki w naszym katalogu są wydane po 2000 roku.
     public void czyWszystkieWydanePo2000Test() {
-        boolean warunek = booksFunctions.czyWszystkieWydanePo2000(books);
-        assertEquals(true, warunek);
+        assertTrue(booksFunctions.czyWszystkieWydanePo2000(books));
     }
 
     @Test // 10.	Zwróć średni rok wydania książki w naszym katalogu.
     public void sredniRokWydaniaTest() {
-        int sredniRok = booksFunctions.pdajSredniRok(books);
-        assertEquals(2007, sredniRok);
+        assertEquals(2007, booksFunctions.pdajSredniRok(books));
     }
 
     @Test // 11.	Zwróć informacje o tym czy jakakolwiek książka w naszym katalogu jest wydana przed 2000 rokiem.
     public void czyIstniejeKsiazkaWydanaPrzed2000Test() {
-        boolean warunek = !(booksFunctions.czyWszystkieWydanePo2000(books));
-        assertEquals(false, warunek);
+        assertTrue(booksFunctions.czyWszystkieWydanePo2000(books));
     }
 
     @Test // 12.	Zwróć wszystkie książki, których tytuł zaczyna się od litery “T” i były one wydane po 2009 roku

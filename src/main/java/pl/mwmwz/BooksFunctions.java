@@ -47,6 +47,7 @@ public class BooksFunctions {
 
     public int sumujLataWydania(List<Book> books) {
         return books.stream().mapToInt(book -> book.getYearPublicationBook()).sum();
+    }
 //        int suma = 0;
 //        for (Book element : books) {
 //            suma += element.getYearPublicationBook();
@@ -54,7 +55,7 @@ public class BooksFunctions {
 //        }
 //        return suma;
 //books.stream().mapToInt()
-    }
+
 
     public int wydanePo2007(List<Book> books) {
         int wydane = 0;
@@ -76,17 +77,14 @@ public class BooksFunctions {
     }
 
     public int pdajSredniRok(List<Book> books) {
-        int srednia = sumujLataWydania(books) / books.size();
-        return srednia;
+        return sumujLataWydania(books) / books.size();
     }
 
     public int po2009NaLitT(List<Book> books) {
         int ilosc = 0;
         for (Book element : books) {
-            if (element.getTitleBook().startsWith("T")) {
-                if (element.getYearPublicationBook() > 2009) {
-                    ++ilosc;
-                }
+            if (element.getTitleBook().startsWith("T") && element.getYearPublicationBook() > 2009) {
+                ++ilosc;
             }
         }
         return ilosc;
@@ -95,7 +93,7 @@ public class BooksFunctions {
     public void dodaj100LatdoDatyWydania(List<Book> books) {
         for (Book element : books) {
             element.setYearPublicationBook(element.getYearPublicationBook() + 100);
-            //System.out.println(element.getYearPublicationBook());
+            /*System.out.println(element.getYearPublicationBook());*/
         }
     }
 
