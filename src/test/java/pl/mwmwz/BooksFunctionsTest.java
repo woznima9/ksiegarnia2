@@ -41,7 +41,7 @@ public class BooksFunctionsTest {
     @Test // 2.	Posortuj książki po roku wydania zaczynajac od wydanej najwcześniej.
     public void posortujKsiazkiOdNajmlodszejTest() {
         List<Book> sortedBooks = booksFunctions.posortujRosnacoIsbn(books);
-        //System.out.println(sortedBooks);
+        System.out.println(sortedBooks);
         assertEquals("0321127420", sortedBooks.get(0).getIndexBook());
         assertEquals("0134685997", sortedBooks.get(4).getIndexBook());
     }

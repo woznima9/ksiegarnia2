@@ -110,6 +110,27 @@ public class BooksFunctions {
         // System.out.println(tytuly);
         return tytuly;
     }
+
+    public void pokazWydanePrzed2005(List<Book> allBooks) {
+        boolean znaleziono = false;
+        for (Book element : allBooks) {
+            if (element.getYearPublicationBook() < 2005) {
+                System.out.println(element);
+                znaleziono = true;
+            }
+        }
+        if (znaleziono == false) {
+            System.out.println("Nie znaleziono takiej pozycji");
+        }
+    }
+
+    public void pokazlistaTytulow(List<Book> allBooks) {
+        for (int i = 0; i < allBooks.size(); ++i) {
+            System.out.println("Książka numer: " + i + " - " + allBooks.get(i));
+            //     System.out.print(allBooks.get(i).getIndexBook() + "\t\t  ");
+            //     System.out.print(allBooks.get(i).getYearPublicationBook() + "\n");
+        }
+    }
 }
 
 

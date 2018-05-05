@@ -24,7 +24,7 @@ public class KsiegarniaApp {
     }
 
 
-     static List<Book> createBooksFromFile() {
+    static List<Book> createBooksFromFile() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(BOOKS_FILE_NAME)));
         List<Book> books = new ArrayList<>();
         try {
