@@ -1,0 +1,20 @@
+Zadania:
+•	Dodanie do aplikacji importu autorów i kategorii z pliku csv. (dropbox w katalogu Dane 2). Książka będzie mieć rodzaj oprawy, autorów oraz kategorie. Autor ma takie właściwości jak identyfikator, imię i nazwisko oraz wiek a kategoria identyfikator, nazwę i pole określające priorytet wyświetlania.
+•	Wyświetlenie wszystkich kategorii
+•	Wyświetlenie wszystkich książek z kategorii wzorce projektowe
+•	Dodanie nowego autora
+•	Wyświetlenie autorów oraz liczby książek które wydali
+•	Edycja nazwy książki
+•	Zapis autorów do pliku authors.csv 
+•	Edycja wieku autora
+•	Zapis kategorii do pliku categories.csv
+•	Wyświetl wszystkie książki autora wybranego przez użytkownika
+•	Dodanie nowej kategorii
+•	Wyświetl wszystkie książki z kategorii wybranej przez użytkownika
+•	Edycja nazwy kategorii
+•	Zapis książek do pliku books.csv.
+•	Dodanie w menu opcji zapisz stan, która zapisze książki, autorów i kategorie do plików csv
+•	Dodanie nowej książki
+•	Dodanie Loggera w jednej klasie (np. Zalogowanie złapanego wyjątku jeśli mamy takie miejsca w aplikacji). Logger powinien logować na ekran oraz do pliku.
+•	Usunięcie książki, autora, kategorii
+•	Przepisanie 3 metod testowych z JUnit na Spock Framework.
