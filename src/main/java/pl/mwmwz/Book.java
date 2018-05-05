@@ -3,7 +3,7 @@ package pl.mwmwz;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Book implements Comparable<Book>{
+public class Book implements Comparable<Book> {
 
     @Getter
     @Setter
@@ -26,13 +26,13 @@ public class Book implements Comparable<Book>{
 
     @Override
     public String toString() {
-        return  "\"" + titleBook + "\"" +
+        return "\"" + titleBook + "\"" +
                 ", index: " + indexBook +
                 ", year: " + yearPublicationBook;
     }
 
     @Override
     public int compareTo(Book o) {
-        return Integer.compare(this.yearPublicationBook,o.yearPublicationBook );
+        return Integer.compare(this.yearPublicationBook, o.yearPublicationBook);
     }
 }

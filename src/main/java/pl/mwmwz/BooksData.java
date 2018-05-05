@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class BooksData {
+class BooksData {
     private static BooksData jedynyBooksData = null;
 
     List<Book> allBooks = new ArrayList<>();
@@ -16,13 +16,10 @@ public class BooksData {
     private BooksData() {
     }
 
-    public static BooksData getInstance() {
+    static BooksData getInstance() {
         if (jedynyBooksData == null) {
             jedynyBooksData = new BooksData();
         }
         return jedynyBooksData;
     }
-
-
-
 }
