@@ -1,8 +1,6 @@
 package pl.mwmwz;
 
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 class KsiegarniaMenu {
 
@@ -25,7 +23,7 @@ class KsiegarniaMenu {
                     break;
                 case 2:
                     System.out.println("Załadowane książki:");
-                    displayPattern.print(booksData.allBooks);
+                    displayPattern.print(booksData.getAllBooks());
                     break;
                 case 3:
                     System.out.println("Zmiana strategii na TRI");
@@ -38,26 +36,30 @@ class KsiegarniaMenu {
 
                 case 5:
                     System.out.println("Wydawnictwa przed 2005 rokiem");
-                    booksFunctions.pokazWydanePrzed2005(booksData.getAllBooks());
+                    displayPattern.print(booksFunctions.pokazWydanePrzed2005(booksData.getAllBooks()));
                     break;
                 case 6:
                     System.out.println("Wydawnictwa przed 2003 rokiem");
-                    pokazWydanePrzed2003(booksData.getAllBooks());
+                    displayPattern.print(booksFunctions.pokazWydanePrzed2003(booksData.getAllBooks()));
                     break;
                 case 7:
                     System.out.println("Dwie ostatnie książki");
-                    System.out.println(booksFunctions.zwracajDwieOstatnieKsiazki(booksData.getAllBooks()));
+                    displayPattern.print(booksFunctions.zwracajDwieOstatnieKsiazki(booksData.getAllBooks()));
                     break;
                 case 8:
                     System.out.println("Książki posortowane rosnąco");
-                    System.out.println(booksFunctions.posortujRosnacoIsbn(booksData.getAllBooks()));
+                    displayPattern.print(booksFunctions.posortujRosnacoIsbn(booksData.getAllBooks()));
+                    break;
+               case 9:
+                    System.out.println("Książki posortowane rosnąco");
+                    displayPattern.print(booksFunctions.posortujMalejacoIsbn(booksData.getAllBooks()));
                     break;
 
-                case 9:
+                case 10:
                     System.out.println("Zmiana strategii na RTI");
                     displayPattern.setBooksPrintStrategy(new StrategyRTI());
                     break;
-                case 10:
+                case 11:
                     System.out.println("wyjście z Menu");
                     wybieraj=false;
                     break;
@@ -69,16 +71,7 @@ class KsiegarniaMenu {
     }
 
 
-    private void pokazWydanePrzed2003(List<Book> allBooks) {
-        List<Book> przefiltrowana = allBooks.stream().filter(book -> book
-                .getYearPublicationBook() < 2003).collect(Collectors.toList());
 
-        if (przefiltrowana.isEmpty()) {
-            System.out.println("Nie znaleziono");
-        } else {
-            przefiltrowana.forEach(book -> System.out.println(book));
-        }
-    }
 
 
     private void menuContent() {
@@ -92,8 +85,9 @@ class KsiegarniaMenu {
         System.out.println("6. Wyświetl książki wydane przed 2003 rokiem");
         System.out.println("7. Wyświetl dwie ostatnie książki");
         System.out.println("8. Posortuj rosnąco");
+        System.out.println("9. Posortuj malejąco");
 
-        System.out.println("9. powrót do strategii default RTI");
-        System.out.println("10. Wyjście z programu");
+        System.out.println("10. powrót do strategii default RTI");
+        System.out.println("11. Wyjście z programu");
     }
 }

@@ -3,8 +3,9 @@ package pl.mwmwz;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class BooksFunctions {
+class BooksFunctions {
 
     Book podajIsbn(List<Book> books, String isbn) {
         for (Book element : books) {
@@ -100,20 +101,33 @@ public class BooksFunctions {
         return tytuly;
     }
 
-    void pokazWydanePrzed2005(List<Book> allBooks) {
+    List<Book> pokazWydanePrzed2005(List<Book> allBooks) {
+        List<Book> wydanePrzed2005 = new ArrayList<>();
         boolean znaleziono=false;
         for (Book element : allBooks) {
             if (element.getYearPublicationBook() < 2005) {
-                System.out.println(element);
+                wydanePrzed2005.add(element);
                 znaleziono = true;
             }
         }
         if (!znaleziono) {
             System.out.println("Nie znaleziono takiej pozycji");
         }
+        return wydanePrzed2005;
     }
 
-    public List<Book> pokazlistaTytulow(List<Book> allBooks) {
+    List<Book> pokazWydanePrzed2003(List<Book> allBooks) {
+        List<Book> przefiltrowana = allBooks.stream().filter(book -> book
+                .getYearPublicationBook() < 2003).collect(Collectors.toList());
+
+        if (przefiltrowana.isEmpty()) {
+            System.out.println("Nie znaleziono");
+        }
+        return przefiltrowana;
+    }
+
+
+    List<Book> pokazListe(List<Book> allBooks) {
         List<Book> lista = new ArrayList<>();
         for (int i = 0; i < allBooks.size(); ++i) {
             lista.add(i, allBooks.get(i));
