@@ -19,11 +19,11 @@ public class BooksFunctionsTest {
 
     @Before  // TESTY na poniższych danych testowych
     public void init() {
-        books.add(new Book("Clean Code", "0132350882", 2008));
-        books.add(new Book("Effective Java", "0134685997", 2018));
-        books.add(new Book("Test Driven Development", "0321146530", 2003));
-        books.add(new Book("Patterns of Enterprise Application Architecture", "0321127420", 2002));
-        books.add(new Book("Head First Design Patterns", "0596007124", 2004));
+        books.add(new Book("Clean Code", "0132350882", 2008, "T",null, null ));
+        books.add(new Book("Effective Java", "0134685997", 2018,"M", null,null));
+        books.add(new Book("Test Driven Development", "0321146530", 2003, "M", null, null));
+        books.add(new Book("Patterns of Enterprise Application Architecture", "0321127420", 2002, "T", null, null));
+        books.add(new Book("Head First Design Patterns", "0596007124", 2004, "M",null,null));
     }
 
 //    @Before // Testy na danych rzeczywistych z importowanego pliku

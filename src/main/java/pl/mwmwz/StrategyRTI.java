@@ -6,7 +6,8 @@ public class StrategyRTI implements BooksPrintStrategy {
     @Override
     public void print(List<Book> allBooks) {
         for (Book element : allBooks) {
-            System.out.println(element.getYearPublicationBook() + " " + element.getTitleBook() + " " + element.getIndexBook());
+            System.out.println(element.getYearPublicationBook() + " " + element.getTitleBook() + " " +
+                    element.getIndexBook()+" "+element.getAuthors()+" " + element.getCategory());
         }
     }
 }
